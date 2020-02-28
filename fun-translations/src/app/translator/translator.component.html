@@ -1,0 +1,10 @@
+<form #f="ngForm">
+    <input style='width: 250px; height: 30px; margin: 5px' type='text' ngModel name="text" />
+    <select style='width: 100px; height: 36px' id="types" [(ngModel)]='selectedType' name='translation'>
+        <option *ngFor='let type of translationTypes' [ngValue]="type">{{ type }}</option>
+    </select>
+    <input style='margin: 5px; padding: 5px; background-color: pink; border: none; height: 36px; width: 150px;'  type='button' value='translate' (click)='translate($event, f)' />
+</form>
+<div class='translation'>
+    <p> {{ translationText.contents.translated }}</p>
+</div>
